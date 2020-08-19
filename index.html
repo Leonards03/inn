@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>inn.</title>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="description" content="Travel blogs to helps other people">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <meta name="theme-color" content="#000000">
+</head>
+
+<body>
+    <header>
+            <nav class="grey lighten-5 black-text" role="navigation">
+                <!-- navbar content here  -->
+                <div class="nav-wrapper container ">
+                    <a href="#home" class="brand-logo black-text">inn.</a>
+                    <a href="#" class="sidenav-trigger" data-target="nav-mobile">
+                        <span class="material-icons large black-text menu">
+                            menu
+                        </span>
+                    </a>
+                    <ul class="topnav left right hide-on-med-and-down black-text"></ul>
+                    <ul class="sidenav" id="nav-mobile"></ul>
+                </div>
+            </nav>
+    </header>
+
+    <main id="content"></main>
+    
+    <footer class="page-footer grey lighten-5">
+        <div class="container black-text">
+            <div class="row">
+                <div class="col s12 l12 center-align">
+                    <h5 class="brand-logo">inn.</h5>
+                    <ul class="footer-nav"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="footer-copyright">
+            <div class="container black-text">
+                <div class="center-align">
+                    © 2020 inn team. All rights reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/materialize.min.js"></script>
+    <script src="./js/init.js"></script>
+    <!-- script to register serviceWorker to browser (if supported) -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .catch(function (error) {
+                        console.log("uhh ohh error happened:", error);
+                    });
+            });
+        } else {
+            console.log("serviceWorker not supported by the browser, offline features will be deactivated");
+        }
+    </script> 
+</body>
+
+</html>
